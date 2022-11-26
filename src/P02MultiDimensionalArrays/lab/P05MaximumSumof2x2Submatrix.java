@@ -24,12 +24,11 @@ public class P05MaximumSumof2x2Submatrix {
             for (int c = 0; c < matrix[r].length-1; c++) {
 
                 int currentSum=0;
+
                 int one=matrix[r][c];
                 int two=matrix[r][c+1];
-
                 int tree=matrix [r+1][c];
                 int four=matrix [r+1][c+1];
-
 
                 currentSum=one+tree+two+four;
                 if (currentSum>sum){
@@ -43,6 +42,8 @@ public class P05MaximumSumof2x2Submatrix {
 
             }
         }
+
+
 
         for (int[] currentArr : matrix2by2) {
             for (int current : currentArr) {
