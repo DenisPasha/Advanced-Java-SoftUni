@@ -14,64 +14,66 @@ public class P04MaximalSum {
         int[][]matrix=new int[rows][cols];
         matrix=fillTheMatrix(matrix,scanner);
         int[][]modMatrix=new int[3][3];
-
+        int [] array=new int[9];
 
         int max=Integer.MIN_VALUE;
 
-        int el1=0;
-        int el2=0;
-        int el3=0;
-        int el4=0;
-        int el5=0;
-        int el6=0;
-        int el7=0;
-        int el8=0;
-        int el9=0;
-
         for (int r = 0; r < matrix.length-2; r++) {
-            int sum=0;
-            for (int c = 0; c < matrix[r].length-2; c++) {
-                el1=matrix[r][c];
-                el2=matrix[r][c+1];
-                el3=matrix[r][c+2];
-                el4=matrix[r+1][c];
-                el5=matrix[r+1][c+1];
-                el6=matrix[r+1][c+2];
-                el7=matrix[r+2][c];
-                el8=matrix[r+2][c+1];
-                el9=matrix[r+2][c+2];
 
-                sum=el1+el2+el3+el4+el5+el6+el7+el8+el9;
+            for (int c = 0; c < matrix[r].length-2; c++) {
+                int sum=0;
+                array[0]=matrix[r][c];
+                array[1]=matrix[r][c+1];
+                array[2]=matrix[r][c+2];
+                array[3]=matrix[r+1][c];
+                array[4]=matrix[r+1][c+1];
+                array[5]=matrix[r+1][c+2];
+                array[6]=matrix[r+2][c];
+                array[7]=matrix[r+2][c+1];
+                array[8]=matrix[r+2][c+2];
+
+                sum=calculateSumOfMatrix(array);
+
                 if (sum > max){
                     max=sum;
-                    boolean isUpdated=false;
-                    for (int row = 0; row < modMatrix.length; row++) {
-                        for (int col = 0; col < modMatrix[row].length; col++) {
-                            modMatrix[row][col]=el1;
-                            modMatrix[row][col+1]=el2;
-                            modMatrix[row][col+2]=el3;
-                            modMatrix[row+1][col]=el4;
-                            modMatrix[row+1][col+1]=el5;
-                            modMatrix[row+1][col+2]=el6;
-                            modMatrix[row+2][col]=el7;
-                            modMatrix[row+2][col+1]=el8;
-                            modMatrix[row+2][col+2]=el9;
-                            isUpdated=true;
-                            break;
-                        }
-                        if (isUpdated){
-                            break;
-                        }
-
-
-                    }
+                    modMatrix=updateMatrix3by3(modMatrix,array);
                 }
-
             }
-
         }
 
         printMatrix(modMatrix,max);
+
+    }
+
+    private static int calculateSumOfMatrix(int[] array) {
+        int sum=0;
+        for (int i = 0; i < array.length; i++) {
+            sum=sum+array[i];
+        }
+        return sum;
+    }
+
+    private static int[][] updateMatrix3by3(int[][] modMatrix, int[] array) {
+        boolean isUpdated=false;
+        for (int row = 0; row < modMatrix.length; row++) {
+            for (int col = 0; col < modMatrix[row].length; col++) {
+                modMatrix[row][col]=array[0];
+                modMatrix[row][col+1]=array[1];
+                modMatrix[row][col+2]=array[2];
+                modMatrix[row+1][col]=array[3];
+                modMatrix[row+1][col+1]=array[4];
+                modMatrix[row+1][col+2]=array[5];
+                modMatrix[row+2][col]=array[6];
+                modMatrix[row+2][col+1]=array[7];
+                modMatrix[row+2][col+2]=array[8];
+                isUpdated=true;
+                break;
+            }
+            if (isUpdated){
+                break;
+            }
+        }
+        return modMatrix;
 
     }
 
