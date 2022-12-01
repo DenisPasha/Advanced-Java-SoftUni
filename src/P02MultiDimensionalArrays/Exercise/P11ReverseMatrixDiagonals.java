@@ -18,8 +18,9 @@ public class P11ReverseMatrixDiagonals {
             matrix[r]= Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         }
 
-        // red row=row-1
-        //col  col=col+1
+        // redove row=row-1
+        //coloni  col=col+1
+
         for (int c = cols-1; c >= 1; c--) {
             System.out.println();
             int row = rows-1;
