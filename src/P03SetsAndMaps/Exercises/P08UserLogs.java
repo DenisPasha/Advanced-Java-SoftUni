@@ -1,6 +1,7 @@
 package P03SetsAndMaps.Exercises;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class P08UserLogs {
     public static void main(String[] args) {
