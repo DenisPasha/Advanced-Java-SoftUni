@@ -20,7 +20,7 @@ public class P06FindEvensorOdds {
         for (int i = start; i <=end ; i++) {
             numsList.add(i);
         }
-        
+
         String condition = scanner.nextLine();
         Predicate<Integer>predicate;
 
