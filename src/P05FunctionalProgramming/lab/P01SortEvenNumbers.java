@@ -10,24 +10,33 @@ public class P01SortEvenNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] inputArrOfStrings = scanner.nextLine().split(", ");
+        String[] numbersArrStrings = scanner.nextLine().split(", ");
 
-     List<Integer>evenNumbersList= Arrays.stream(inputArrOfStrings)
-             .map(Integer::parseInt)
-             .filter(e -> e % 2 == 0).toList();
+        Predicate<Integer> evenNum = e -> e % 2 ==0;
+        Function<String,Integer> convertor = e -> Integer.parseInt(e);
 
-     List<String>evenToStringList = new ArrayList<>();
-        for (int i = 0; i < evenNumbersList.size(); i++) {
-            evenToStringList.add(String.valueOf(evenNumbersList.get(i)));
-        }
-        System.out.println(String.join(", ",evenToStringList));
-
-        evenToStringList = evenToStringList.stream()
-                .map(Integer::parseInt).sorted(Integer::compareTo)
-                .map(e->e.toString())
+        List<Integer> evenNumList= Arrays.stream(numbersArrStrings)
+                .map(convertor)
+                .filter(evenNum)
                 .collect(Collectors.toList());
 
-        System.out.println(String.join(", ",evenToStringList));
+        String[] evenNumArrString = new String[evenNumList.size()];
+
+        for (int i = 0; i < evenNumArrString.length; i++) {
+            evenNumArrString[i] = String.valueOf(evenNumList.get(i));
+        }
+
+        System.out.println(String.join(", ",evenNumArrString));
+
+        Collections.sort(evenNumList);
+
+        String[] sortedNumsArr = new String[evenNumList.size()];
+        for (int i = 0; i < sortedNumsArr.length; i++) {
+            sortedNumsArr[i] = String.valueOf(evenNumList.get(i));
+        }
+        System.out.println(String.join(", ",sortedNumsArr));
+
+
 
     }
 }

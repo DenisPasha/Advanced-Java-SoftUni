@@ -13,9 +13,8 @@ public class P07FindTheSmallestElement {
 
         List<Integer> inputList = Arrays.stream(scanner.nextLine().split("\\s+")).map(Integer::parseInt).collect(Collectors.toList());
 
-        Function<List<Integer>,Integer> smallestElementIndex = list -> list.lastIndexOf(Collections.min(list));
-       int smallest = smallestElementIndex.apply(inputList);
-        System.out.println(smallest);
-
+        Function<List<Integer>,Integer> function = list -> list.lastIndexOf(Collections.min(list));
+        int n = function.apply(inputList);
+        System.out.println(n);
     }
 }

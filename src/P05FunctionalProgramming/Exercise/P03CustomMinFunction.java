@@ -13,7 +13,7 @@ public class P03CustomMinFunction {
 
         List<Integer>numsList = Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
 
-        Function<List<Integer>,Integer> smallestNum = list -> Collections.min(list);
-        System.out.println(smallestNum.apply(numsList));
+        Function<List<Integer>,Integer> function = list -> Collections.min(numsList);
+        System.out.println(function.apply(numsList));
     }
 }

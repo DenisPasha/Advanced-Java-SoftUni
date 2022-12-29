@@ -14,13 +14,10 @@ public class P05ReverseAndExclude {
 
         List<Integer> inputList = Arrays.stream(scanner.nextLine().split("\\s+")).map(Integer::parseInt).collect(Collectors.toList());
 
-        int n = Integer.parseInt(scanner.nextLine());
-
-        Collections.reverse(inputList);
-        Predicate<Integer> predicate = number -> number % n ==0;
-        inputList.removeIf(predicate);
-
-        inputList.forEach(number -> System.out.print(number+" "));
-
+       Collections.reverse(inputList);
+       int n = Integer.parseInt(scanner.nextLine());
+       Predicate<Integer> predicate = num -> num % n ==0;
+       inputList.removeIf(predicate);
+       inputList.forEach(e -> System.out.print(e+" "));
     }
 }
