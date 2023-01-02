@@ -1,64 +1,38 @@
 package P06DefiningClasses.Exercises.SpeedRacing;
 
 public class Car {
-
-    private String model;
+   private String model ;
     private double fuel;
-    private  double fuelCostPerKm;
-    private double distanceTraveled;
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setFuel(double fuel) {
-        this.fuel = fuel;
-    }
-
-    public void setFuelCostPerKm(double fuelCostPerKm) {
-        this.fuelCostPerKm = fuelCostPerKm;
-    }
-
-    public void setDistanceTraveled(double distanceTraveled) {
-        this.distanceTraveled = distanceTraveled;
-    }
-
-    public Car(String model, double fuel, double fuelCostPerKm) {
+    private double costPerKilometer;
+    private int distanceTraveled;
+    private static final int INITIAL_DISTANCE = 0;
+    public Car(String model, int fuel, double costPerKilometer) {
         this.model = model;
         this.fuel = fuel;
-        this.fuelCostPerKm = fuelCostPerKm;
-        this.distanceTraveled = 0;
+        this.costPerKilometer = costPerKilometer;
+        this.distanceTraveled = INITIAL_DISTANCE;
+
     }
 
-    public String getModel() {
-        return model;
+    public void canMove(int amountOfKilometers){
+
+        if (this.costPerKilometer * amountOfKilometers <= this.fuel){
+            this.fuel = this.fuel - (this.costPerKilometer * amountOfKilometers);
+            this.distanceTraveled = this.distanceTraveled + amountOfKilometers;
+        }else {
+            System.out.println("Insufficient fuel for the drive");
+        }
     }
 
     public double getFuel() {
         return fuel;
     }
 
-    public double getFuelCostPerKm() {
-        return fuelCostPerKm;
-    }
-
-    public double getDistanceTraveled() {
+    public int getDistanceTraveled() {
         return distanceTraveled;
     }
 
-    public void canReach(String carModel, double kilometers){
-
-       double neededLitres = kilometers * this.fuelCostPerKm;
-
-       if (neededLitres < this.fuel){
-           this.fuel = this.fuel - neededLitres;
-           this.distanceTraveled = this.distanceTraveled + kilometers;
-       }else {
-           System.out.println("Insufficient fuel for the drive");
-       }
-
+    public String getModel() {
+        return model;
     }
-
-
-
 }
