@@ -1,29 +1,32 @@
 package P06DefiningClasses.Exercises.PokemonTrainer;
 
 public class Pokemon {
-    private String name;
-    private String element;
-    private int health;
 
-    public void setHealth(int health) {
-        this.health = health;
+    private String pokemonName;
+    private String pokemonElement;
+    private int pokemonHealth;
+
+    public String getPokemonName() {
+        return pokemonName;
     }
 
-    public String getName() {
-        return name;
+    public void setPokemonName(String pokemonName) {
+        this.pokemonName = pokemonName;
     }
 
-    public String getElement() {
-        return element;
+    public String getPokemonElement() {
+        return pokemonElement;
     }
 
-    public int getHealth() {
-        return health;
+    public void setPokemonElement(String pokemonElement) {
+        this.pokemonElement = pokemonElement;
     }
 
-    public Pokemon(String name, String element, int health) {
-        this.name = name;
-        this.element = element;
-        this.health = health;
+    public int getPokemonHealth() {
+        return pokemonHealth;
+    }
+
+    public void setPokemonHealth(int pokemonHealth) {
+        this.pokemonHealth = pokemonHealth;
     }
 }

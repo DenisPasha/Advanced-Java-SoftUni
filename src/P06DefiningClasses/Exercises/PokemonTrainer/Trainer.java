@@ -1,38 +1,34 @@
 package P06DefiningClasses.Exercises.PokemonTrainer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Trainer {
+    private String trainerName;
+    private List<Pokemon> pokemonList = new ArrayList<>();
+    private int numOfBadges=0;
 
-    private String name;
-    private  int badges;
-    private List<Pokemon> pokemon;
-
-    public Trainer(String name, List<Pokemon> pokemon) {
-        this.name = name;
-        this.pokemon = pokemon;
-        this.badges = 0;
+    public String getTrainerName() {
+        return trainerName;
     }
 
-    public List<Pokemon> getPokemon() {
-        return pokemon;
+    public void setTrainerName(String trainerName) {
+        this.trainerName = trainerName;
     }
 
-    public void setPokemon(List<Pokemon> pokemon) {
-        this.pokemon = pokemon;
+    public List<Pokemon> getPokemonList() {
+        return pokemonList;
     }
 
-    public void setBadges(int badges) {
-        this.badges = badges;
+    public void setPokemonList(List<Pokemon> pokemonList) {
+        this.pokemonList = pokemonList;
     }
 
-    public String getName() {
-        return name;
+    public int getNumOfBadges() {
+        return numOfBadges;
     }
 
-    public int getBadges() {
-        return badges;
+    public void setNumOfBadges(int numOfBadges) {
+        this.numOfBadges = numOfBadges;
     }
-
-
 }
