@@ -20,5 +20,4 @@ public class Parents {
     public void setParentBirthday(String parentBirthday) {
         this.parentBirthday = parentBirthday;
     }
-
 }

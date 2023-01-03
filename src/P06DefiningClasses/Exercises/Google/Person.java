@@ -18,6 +18,14 @@ public class Person {
         this.car = car;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     public List<Children> getChildrenList() {
         return childrenList;
     }
@@ -38,18 +46,7 @@ public class Person {
         return pokemonList;
     }
 
-    public Company getCompany() {
-        return company;
-    }
-
     public void setPokemonList(List<Pokemon> pokemonList) {
         this.pokemonList = pokemonList;
     }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-
-
 }
