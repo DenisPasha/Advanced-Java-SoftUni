@@ -1,4 +1,4 @@
-package P07Wrokshop;
+package P07Wrokshop.SmartArray;
 
 import java.util.function.Consumer;
 
