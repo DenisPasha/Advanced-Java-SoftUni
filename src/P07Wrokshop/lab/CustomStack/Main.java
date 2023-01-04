@@ -1,4 +1,4 @@
-package P07Wrokshop.CustomStack;
+package P07Wrokshop.lab.CustomStack;
 
 import java.util.Scanner;
 
@@ -7,6 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Stack stack = new Stack();
+        stack.add(4);
 
 
 

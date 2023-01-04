@@ -1,4 +1,4 @@
-package P07Wrokshop.CustomStack;
+package P07Wrokshop.lab.CustomStack;
 
 public class Stack {
 
