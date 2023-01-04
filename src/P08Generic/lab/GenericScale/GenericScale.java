@@ -1,10 +1,10 @@
-package GenericScale;
+package P08Generic.lab.GenericScale;
 
-public class Scale<T extends Comparable<T>>  {
+public class GenericScale<T extends Comparable<T>>  {
     private T left;
     private T right;
 
-    public Scale(T left, T right) {
+    public GenericScale(T left, T right) {
         this.left = left;
         this.right = right;
     }
