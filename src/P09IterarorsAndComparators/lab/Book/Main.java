@@ -1,4 +1,4 @@
-package P09IterarorsAndComparators.Book;
+package P09IterarorsAndComparators.lab.Book;
 
 public class Main {
     public static void main(String[] args) {
