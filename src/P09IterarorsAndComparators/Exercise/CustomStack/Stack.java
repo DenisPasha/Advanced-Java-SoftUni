@@ -5,10 +5,16 @@ import java.util.Iterator;
 
 public class Stack implements Iterable<Integer> {
 
-    private ArrayDeque<Integer> stack ;
+    private ArrayDeque<Integer> stack;
+    private Object[] stackArr;
 
     public Stack(ArrayDeque<Integer> stack) {
         this.stack = stack;
+        stackArr= new Object[stack.size()];
+    }
+
+    private void stackArrInitialisator(){
+        stackArr = stack.toArray();
     }
 
 
@@ -28,26 +34,54 @@ public class Stack implements Iterable<Integer> {
     @Override
     public Iterator<Integer> iterator() {
         return new Assistant();
+
+
     }
+
     private class Assistant implements Iterator{
 
         int index = 0;
+        int count = 0;
+
         @Override
         public boolean hasNext() {
-            if (this.index < stack.size() ){
-                return true;
-            }else {
-                return false;
+            boolean over = false;
+            if (!stack.isEmpty()) {
+
+                if (count == 2) {
+                    return over;
+                } else {
+                    if (index == stack.size()) {
+                        count++;
+                        if (count == 2) {
+                            over = false;
+                            return false;
+                        }
+                        index = 0;
+                        over = true;
+                    } else {
+                        if (this.index < stack.size()) {
+                            over = true;
+                        } else {
+                            over = false;
+                        }
+                    }
+                }
+
             }
+            return over;
 
         }
 
         @Override
         public Object next() {
-            int number = stack.pop();
+            stackArrInitialisator();
+           Object number = stackArr[index];
+            index++;
             return number;
         }
     }
+
 
 //    public void forEach(){
 //        int index = 2;

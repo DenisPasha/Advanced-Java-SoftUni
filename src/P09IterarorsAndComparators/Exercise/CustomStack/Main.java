@@ -11,7 +11,6 @@ public class Main {
 
         String command = scanner.nextLine();
         List<Stack> list = new ArrayList<>();
-        System.out.println();
         while (!command.contains("END")){
 
             if (command.contains("Push")){
@@ -35,6 +34,7 @@ public class Main {
         Stack stack = list.get(0);
 //        stack.forEach();
 
+        System.out.println();
         Iterator<Integer> assistant = stack.iterator();
             while (assistant.hasNext()){
                 System.out.println(assistant.next());
