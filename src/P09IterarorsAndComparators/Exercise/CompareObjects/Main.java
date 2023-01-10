@@ -1,6 +1,7 @@
 package P09IterarorsAndComparators.Exercise.CompareObjects;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,12 +30,16 @@ public class Main {
                 equalPersons++;
             }
         }
+        PersonComparator comparator = new PersonComparator();
 
+        System.out.printf("");
+        Collections.sort(personList,comparator);
+        System.out.printf("");
 
-        if (equalPersons==1){
-            System.out.printf("No matches");
-        }else {
-            System.out.printf("%d %d %d",equalPersons,personList.size()- equalPersons,personList.size());
-        }
+//        if (equalPersons==1){
+//            System.out.printf("No matches");
+//        }else {
+//            System.out.printf("%d %d %d",equalPersons,personList.size()- equalPersons,personList.size());
+//        }
     }
 }
