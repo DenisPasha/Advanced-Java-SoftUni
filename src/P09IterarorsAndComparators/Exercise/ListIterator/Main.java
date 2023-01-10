@@ -19,12 +19,14 @@ public class Main {
                 ListiIterator listiIterator = new ListiIterator(inputList);
                 listiIteratorList.add(listiIterator);
                 
-            } else if (command.contains("Move")) {
+            } else if (command.equals("Move")) {
                 System.out.println(listiIteratorList.get(0).move());
-            } else if (command.contains("Print")) {
+            } else if (command.equals("Print")) {
                 listiIteratorList.get(0).print();
-            } else if (command.contains("HasNext")) {
+            } else if (command.equals("HasNext")) {
                 System.out.println(listiIteratorList.get(0).hasNext());
+            } else if (command.equals("PrintAll")) {
+                listiIteratorList.get(0).printAll();
             }
             command = scanner.nextLine();
         }
