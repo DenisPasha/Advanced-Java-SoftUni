@@ -8,8 +8,8 @@ public class P01BrowserHistory {
         Scanner scanner = new Scanner(System.in);
 
         String input=scanner.nextLine();
+        System.out.println();
         ArrayDeque<String>stack=new ArrayDeque<>();
-
 
         while (!input.equals("Home")){
 
@@ -24,8 +24,6 @@ public class P01BrowserHistory {
                 stack.push(input);
                 System.out.println(input);
             }
-
-
             input=scanner.nextLine();
         }
 

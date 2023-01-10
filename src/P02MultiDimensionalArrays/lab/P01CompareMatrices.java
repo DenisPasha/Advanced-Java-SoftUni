@@ -51,7 +51,6 @@ public class P01CompareMatrices {
 
         for (int rows = 0; rows < matrix.length ; rows++) {
             matrix[rows]=Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-
         }
         return matrix;
     }
