@@ -26,23 +26,23 @@ public class P01KAT {
 
         int registeredCars = 0;
         int days = 0;
-        while (carsStack.size() >0 && licensePlateQ.size() > 0){
-            int cars = carsStack.pop();
-            int carPlates = licensePlateQ.poll();
+        while (carsStack.size() > 0 && licensePlateQ.size() > 0){
+            int currentCars = carsStack.pop();
+            int currentCarPlates = licensePlateQ.poll();
 
-
-
-            if (carPlates / 2 > cars){
-                carPlates = carPlates - (cars * 2);
-                registeredCars = registeredCars + cars;
+            if (currentCarPlates / 2 > currentCars){
+                currentCarPlates = currentCarPlates - (currentCars * 2);
+                registeredCars = registeredCars + currentCars;
                 days++;
-                licensePlateQ.offer(carPlates);
-            }else if (cars > carPlates / 2){
-                cars = cars - (carPlates / 2);
+                licensePlateQ.offer(currentCarPlates);
+            }else if (currentCars > currentCarPlates / 2){
+                registeredCars = registeredCars + (currentCarPlates / 2);
+                currentCars = currentCars - (currentCarPlates / 2);
+
                 days++;
-                carsStack.offer(cars);
+                carsStack.addLast(currentCars);
             }else {
-                registeredCars+=cars;
+                registeredCars+=currentCars;
                 days++;
             }
         }
