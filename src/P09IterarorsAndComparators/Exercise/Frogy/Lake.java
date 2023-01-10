@@ -15,53 +15,42 @@ public class Lake implements Iterable <Integer>{
     public Iterator iterator() {
         return new Frog();
     }
+
+    private int lastEvenIndex(){
+       int totalIndexSize = list.size()-1;
+       if (totalIndexSize % 2==0){
+           return totalIndexSize;
+       }else {
+           return totalIndexSize-1;
+       }
+    }
     private class Frog implements Iterator<Integer>{
+
         int index = 0;
-
-
+        int lastEven = lastEvenIndex();
 
         @Override
         public boolean hasNext() {
-
-            boolean desicion = true;
-            int lastEvenIndex = 0;
-            int lastOddIndex = 0;
-
-            if (list.size()-1 % 2 ==0){
-                lastEvenIndex = list.size()-1;
-                lastOddIndex = list.size()-2;
-            }else {
-                lastEvenIndex = list.size()-2;
-                lastOddIndex = list.size()-1;
-            }
-
-            if (this.index-2 == lastOddIndex){
-                return false;
-            }
-
-            if (this.index != lastEvenIndex+2){
+            if (index < list.size()){
                 return true;
             }else {
-                index = 1;
+                return false;
             }
-
-            if (this.index == lastOddIndex){
-                desicion = false;
-            }
-
-            return desicion;
         }
 
         @Override
         public Integer next() {
-            int number = list.get(this.index);
-            if (hasNext()){
-                this.index= this.index + 2;
-
+            if (index == lastEven){
+                int num = list.get(index);
+                index = 1;
+                return num;
+            }else {
+                int num = list.get(index);
+                index+=2;
+                return num;
             }
-          return number;
-        }
 
+        }
     }
 
 

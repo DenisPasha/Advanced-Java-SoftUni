@@ -17,9 +17,14 @@ public class Main {
         String command = scanner.nextLine();
         if (command.equals("END")){
             Iterator <Integer> evenIterator = lake.iterator();
+            StringBuilder sb = new StringBuilder();
+
             while (evenIterator.hasNext()){
-                System.out.print(evenIterator.next()+", ");
+                sb.append(evenIterator.next()).append(", ");
+
             }
+            sb.replace(sb.length()-2,sb.length()-1,"");
+            System.out.println(sb.toString());
         }
 
 
