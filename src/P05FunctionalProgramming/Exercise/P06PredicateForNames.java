@@ -14,6 +14,6 @@ public class P06PredicateForNames {
         int n = Integer.parseInt(scanner.nextLine());
         List<String> namesList = Arrays.stream(scanner.nextLine().split("\\s+")).collect(Collectors.toList());
 
-        namesList.stream().filter(name -> name.length() <= n).forEach(name -> System.out.print(name+" "));
+        namesList.stream().filter(name -> name.length() <= n).forEach(name -> System.out.println(name));
     }
 }

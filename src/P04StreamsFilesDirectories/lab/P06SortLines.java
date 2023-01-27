@@ -1,6 +1,6 @@
 package P04StreamsFilesDirectories.lab;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,6 +18,8 @@ public class P06SortLines {
         Collections.sort(stringList);
 
         Files.write(pathOut,stringList);
+
+
 
 
 

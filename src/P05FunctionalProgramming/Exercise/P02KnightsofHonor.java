@@ -10,7 +10,7 @@ public class P02KnightsofHonor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-    List<String> inputList = Arrays.stream(scanner.nextLine().split(" ")).toList();
+    List<String> inputList = Arrays.stream(scanner.nextLine().split(" ")).collect(Collectors.toList());
     Consumer<String> consumer = element -> System.out.println("Sir "+element);
         for (int i = 0; i < inputList.size(); i++) {
             String name = inputList.get(i);
