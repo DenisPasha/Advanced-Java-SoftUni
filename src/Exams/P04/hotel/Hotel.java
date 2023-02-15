@@ -1,10 +1,7 @@
-package hotel;
+package Exams.P04.hotel;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.stream.Collectors;
 
 public class Hotel {
     //•	name: String
@@ -54,13 +51,13 @@ public class Hotel {
         return this.roaster.size();
     }
     //•	getStatistics() – returns a String in the following format:
-    //o	"The people in the hotel {name} are:
+    //o	"The people in the Exams.P04.hotel {name} are:
     //{Person1}
     //{Person2}
     public String getStatistics(){
 
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("The people in the hotel %s are:",this.name)).append(System.lineSeparator());
+        sb.append(String.format("The people in the Exams.P04.hotel %s are:",this.name)).append(System.lineSeparator());
         for (Person currentPerson : this.roaster) {
             sb.append(currentPerson).append(System.lineSeparator());
         }
