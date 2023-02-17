@@ -1,4 +1,4 @@
-package parrots;
+package Exams.P05.parrots;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public class Cage {
     //•	name: String
     //•	capacity: int
-    //•	data: List<Parrot> that holds added parrots
+    //•	data: List<Parrot> that holds added Exams.P05.parrots
     private String name ;
     private int capacity;
     private List<Parrot> data;
@@ -52,7 +52,7 @@ public class Cage {
         }
         return null;
     }
-    //•	sellParrotBySpecies(String species) method - sells and returns all parrots from that species as a List
+    //•	sellParrotBySpecies(String species) method - sells and returns all Exams.P05.parrots from that species as a List
     public List<Parrot> sellParrotBySpecies(String species){
         List<Parrot> parrotList = new ArrayList<>();
         for (int i = 0; i < this.data.size(); i++) {
@@ -64,11 +64,11 @@ public class Cage {
         }
         return parrotList;
     }
-    //•	count() - returns the number of parrots
+    //•	count() - returns the number of Exams.P05.parrots
     public int count(){
        return this.data.size();
     }
-    //•	report() - returns a String in the following format, including only not sold parrots:
+    //•	report() - returns a String in the following format, including only not sold Exams.P05.parrots:
     //o	"Parrots available at {cageName}:
     //{Parrot 1}
     //{Parrot 2}

@@ -27,6 +27,7 @@ public class P02ThroneConquering {
             }
         }
 
+
         String commands = scanner.nextLine();
 
         while (true){

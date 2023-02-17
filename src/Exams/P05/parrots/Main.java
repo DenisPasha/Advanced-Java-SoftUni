@@ -1,4 +1,4 @@
-package parrots;
+package Exams.P05.parrots;
 
 import java.util.List;
 import java.util.Scanner;

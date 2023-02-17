@@ -1,4 +1,4 @@
-package parrots;
+package Exams.P05.parrots;
 
 public class Parrot {
     //•	name: String
@@ -31,6 +31,7 @@ public class Parrot {
     }
 
     public String toString(){
-       return String.format("Parrot (%s): %s%n",this.species,this.name);
+       return String.format("Parrot (%s): %s",this.species,this.name);
+
     }
 }
